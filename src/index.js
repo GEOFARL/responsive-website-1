@@ -1,2 +1,2 @@
-import './main.scss';
+import './sass/main.scss';
 import './template.html';

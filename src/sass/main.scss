@@ -1,7 +1,3 @@
-@use './abstracts/functions';
-@use './abstracts/mixins';
-@use './abstracts/variables';
-
 @forward './base/base.scss';
 @forward './base/animations';
 @forward './base/typography';
@@ -10,5 +6,6 @@
 @forward './components/button';
 
 @forward './layout/header';
+@forward './layout/grid';
 
 @forward './pages/home';

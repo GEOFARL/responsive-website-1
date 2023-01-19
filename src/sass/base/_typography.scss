@@ -3,7 +3,7 @@
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: variables.$default-font-size;
   line-height: 1.7;
   color: variables.$color-grey-dark;
 }
@@ -49,5 +49,19 @@ body {
   &:hover {
     transform: skewY(2deg) skewX(15deg);
     text-shadow: .5rem 1rem 2rem rgba(variables.$color-black, .2);
+  }
+}
+
+.heading-tertiary {
+  font-size: variables.$default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: variables.$default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
   }
 }

@@ -1,4 +1,5 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins" as m;
 
 .form {
   &__group:not(:last-child) {
@@ -31,6 +32,10 @@
     &:focus:invalid {
       border-color: variables.$color-secondary-dark;
     }
+
+    @include m.respond(tab-port) {
+      width: 100%;
+    }
   }
 
   &__label {
@@ -51,6 +56,11 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+
+    @include m.respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input {

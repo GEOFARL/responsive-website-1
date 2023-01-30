@@ -1,21 +1,37 @@
 @use '../abstracts/variables';
-@use '../abstracts/mixins';
+@use '../abstracts/mixins' as m;
 
 .row {
   max-width: variables.$grid-width;
   margin: 0 auto;
 
-  &:not(:last-child) {
-    margin-bottom: variables.$gap-horizontal;
+  @include m.respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
-  @include mixins.clearfix;
+  &:not(:last-child) {
+    margin-bottom: variables.$gap-vertical;
+    @include m.respond(tab-port) {
+      margin-bottom: variables.$gap-vertical-small;
+    }
+  }
+
+  @include m.clearfix;
 
   [class^="col-"] {
     float: left;
   
     &:not(:last-child) {
       margin-right: variables.$gap-horizontal;
+      @include m.respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: variables.$gap-vertical-small;
+      }
+    }
+
+    @include m.respond(tab-port) {
+      width: 100% !important;
     }
   }
 

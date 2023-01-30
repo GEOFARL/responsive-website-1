@@ -1,9 +1,14 @@
 @use '../abstracts/variables';
+@use '../abstracts/mixins' as m;
 
 .section-about {
   background-color: variables.$color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh;
+
+  @include m.respond(tab-port) {
+    padding: 20rem 0;
+  }
 }
 
 .section-feature {
@@ -19,18 +24,30 @@
   & > * {
     transform: skewY(7deg);
   }
+
+  @include m.respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-tours {
   background-color: variables.$color-grey-light-1;
   margin-top: -10rem;
   padding: 25rem 0 15rem 0;
+
+  @include m.respond(tab-port) {
+    padding: 20rem 0 10rem 0;
+  }
 }
 
 .section-stories {
   padding: 15rem 0;
   background-color: transparent;
   position: relative;
+
+  @include m.respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-book {
@@ -51,5 +68,40 @@
   &__form {
     width: 50%;
     padding: 6rem;
+  }
+
+
+
+
+  @include m.respond(tab-land) {
+    background-image: linear-gradient(105deg,
+      rgba(variables.$color-white, .9) 0%,
+      rgba(variables.$color-white, .9) 65%,
+      transparent 65%), 
+      url("../images/nat-10.jpeg");
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, .2);
+
+    &__form {
+      width: 65%;
+      padding: 6rem;
+    }
+  }
+
+  @include m.respond(tab-port) {
+    background-image: linear-gradient(to right,
+      rgba(variables.$color-white, .9) 0%,
+      rgba(variables.$color-white, .9) 100%,
+      transparent 100%), 
+      url("../images/nat-10.jpeg");
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, .2);
+
+    &__form {
+      width: 100%;
+      padding: 6rem;
+    }
   }
 }

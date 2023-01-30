@@ -1,4 +1,5 @@
 @use "../abstracts/variables";
+@use "../abstracts/mixins" as m;
 
 .card {
   // FUNCTIONALITY
@@ -148,5 +149,60 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+
+
+
+
+
+  
+  @include m.respond(tab-port) {
+    // FUNCTIONALITY
+    height: auto;
+    border-radius: 3px;
+    background-color: variables.$color-white;
+    box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, .15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      width: 100%;
+      box-shadow: 0 0 0rem rgba(variables.$color-black, .15);
+
+      &--back {
+        transform: rotateY(0);
+        border-top-right-radius: 0;
+        -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    // BACK SIDE STYLING
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 6rem;
+      font-weight: 100;
+    }
+
+    &__details {
+      padding: 0;
+    }
   }
 }

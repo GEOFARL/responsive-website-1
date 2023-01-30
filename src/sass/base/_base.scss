@@ -19,7 +19,7 @@
   @include mixins.respond(tab-port) {
     font-size: 50%;
   }
-  
+
   @include mixins.respond(big-desktop) {
     font-size: 75%;
   }
@@ -28,4 +28,8 @@
 body {
   box-sizing: border-box;
   padding: 3rem;
+
+  @include mixins.respond(tab-port) {
+    padding: 0;
+  }
 }

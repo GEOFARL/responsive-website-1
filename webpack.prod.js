@@ -17,6 +17,7 @@ module.exports = merge(common, {
         use: [
           CssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader',
           'sass-loader',
         ],
       },
